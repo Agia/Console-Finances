@@ -88,19 +88,44 @@ let finances = [
     ['Feb-2017', 671099]
     ];
 
-let totalMonths = 0;
+// Calculate the total number of months in dataset
+let totalMonths = finances.length;
+// Initialise variable for for loop
 let total = 0;
-for (i = 0; i < finances.length; i++) {
-    totalMonths++;
+// Initialise array for tracking changes between monthly amounts
+let changes = [];
+let priorMonth = 0;
+let difference = 0;
+let greatestDecrease = 0;
+let greatestIncrease = 0;
+
+for (let i = 0; i < finances.length; i++) {
+    // Iterate through each entry at index [1] in the array and adding it to the 'total' variable
     total += finances[i][1];
+
+    let currentMonth = finances[i][1];
+    difference += currentMonth - priorMonth;
+
+    // NEED TO WORK ON BELOW
+    // if ((currentMonth - priorMonth) > greatestIncrease) {
+    //     greatestIncrease = currentMonth;
+    // } else {
+    //     greatestDecrease = currentMonth;
+    // }
+
+    priorMonth = currentMonth;
 }
 
+let averageChange = (difference / finances.length).toFixed(2);
+
+
+// Print out the output to the console
 console.log(`
 Financial Analysis
 ----------------------------
 Total Months: ${totalMonths}
 Total: ${total}
-Average Change: 
-Greatest Increase in Profits: 
-Greatest Decrease in Profits: 
+Average Change: ${averageChange}
+Greatest Increase in Profits: ${greatestIncrease} // Current Month to Previous Month
+Greatest Decrease in Profits: ${greatestDecrease} // Current Month to Previous Month
 `);
