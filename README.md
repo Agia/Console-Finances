@@ -6,21 +6,22 @@
 <h1 align="center">Console Finances</h1>
 
   <p align="center" >
-    <a href="https://github.com/github_username/repo_name"><b>View Demo</b></a>
+    <a href="https://agia.github.io/Console-Finances"><b>View Demo</b></a>
   </p>
 </div>
 
 ## Description
 
 <!-- TO BE ADDED -->
-Using JavaScript, and given a dataset composed of arrays containing two fields, `Date` and `Profit/Losses`, this code analyses the dataset (found in `index.js`) and print the results to the browser console, calculating each of the following:
+Using JavaScript, and given a dataset composed of arrays containing two fields, `Date` and `Profit/Losses`, this code analyses the dataset (found at the top of the `script.js`) and prints the results to the browser console, calculating each of the following:
 
 - Total number of months included in the dataset.
 - Net total of Profit/Losses over the entire period.
 - Average of the changes in Profit/Losses over the entire period.
 - The greatest increase in profits (date and amount) over the entire period of the dataset.
 - The greatest decrease in losses (date and amount) over the entire period of the dataset.
-- An example output should look like the following:
+
+An example output should look like the following:
 
     ```text
     Financial Analysis
@@ -39,11 +40,11 @@ No installation needed, just check out [the demo here](https://agia.github.io/Co
 <!-- TO BE ADDED -->
 Here is an example in use:
 <br />
-![Gif showing console app in use](assets/screenshot.gif)
+![Screenshot showing console app in use](assets/screenshot.png)
 
 ## Acknowledgments
 
-<!-- TO ADDED -->
-- []()
+MDN was a useful reference in this instance, particularly for `toFixed()` method, which I used to format the output to console:
+- [MDN (Number.prototype.toFixed())](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
 
 ---
