@@ -90,28 +90,31 @@ let finances = [
 
 // Calculate the total number of months in dataset
 let totalMonths = finances.length;
-// Initialise variable for for loop
+// Initialise variables for `for` loop
 let total = 0;
-// Initialise array for tracking changes between monthly amounts
-let changes = [];
+
 let priorMonth = 0;
 let difference = 0;
 let greatestDecrease = 0;
 let greatestIncrease = 0;
+let monthOfIncrease;
+let monthOfDecrease;
 
 for (let i = 0; i < finances.length; i++) {
     // Iterate through each entry at index [1] in the array and adding it to the 'total' variable
     total += finances[i][1];
 
+    // Initialise currentMonth to the second index [1] of index i in finance array
     let currentMonth = finances[i][1];
-    difference += currentMonth - priorMonth;
 
-    // NEED TO WORK ON BELOW
-    // if ((currentMonth - priorMonth) > greatestIncrease) {
-    //     greatestIncrease = currentMonth;
-    // } else {
-    //     greatestDecrease = currentMonth;
-    // }
+    // Iteratively adding the difference between prior and current months
+    difference += currentMonth - priorMonth;
+    
+    let profits = currentMonth - priorMonth;
+    if (profits > greatestIncrease) {
+        greatestIncrease = profits;
+        monthOfIncrease = finances[i][0];
+    }
 
     priorMonth = currentMonth;
 }
@@ -126,6 +129,6 @@ Financial Analysis
 Total Months: ${totalMonths}
 Total: ${total}
 Average Change: ${averageChange}
-Greatest Increase in Profits: ${greatestIncrease} // Current Month to Previous Month
-Greatest Decrease in Profits: ${greatestDecrease} // Current Month to Previous Month
+Greatest Increase in Profits: ${monthOfIncrease} ($${greatestIncrease})  // Current Month to Previous Month
+Greatest Decrease in Profits: ${monthOfDecrease} ($${greatestDecrease})  // Current Month to Previous Month
 `);
