@@ -110,15 +110,21 @@ for (let i = 0; i < finances.length; i++) {
     // Iteratively adding the difference between prior and current months
     difference += currentMonth - priorMonth;
     
+    // Comparint the greatest increase / decrease and storing it when relevant
     let profits = currentMonth - priorMonth;
     if (profits > greatestIncrease) {
         greatestIncrease = profits;
         monthOfIncrease = finances[i][0];
+    } else if (profits < greatestDecrease) {
+        greatestDecrease = profits;
+        monthOfDecrease = finances[i][0];
     }
 
+    // Updating variable before iterating over loop.
     priorMonth = currentMonth;
 }
 
+// Calculating the average of total stored in difference and amending output to use only 2 decimal places.
 let averageChange = (difference / finances.length).toFixed(2);
 
 
